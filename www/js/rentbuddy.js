@@ -1,7 +1,6 @@
 // Init App
 var myApp = new Framework7({
-    modalTitle: 'RentBuddy',
-    }
+    modalTitle: 'RentBuddy'
 });
 
 // Expose Internal DOM library
