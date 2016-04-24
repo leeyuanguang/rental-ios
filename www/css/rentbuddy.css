@@ -1,0 +1,47 @@
+.page[data-page="tabbar"] .tabbar,
+.page[data-page="tabbar-labels"] .tabbar,
+.page[data-page="messages"] .tabbar,
+.page[data-page="tabbar"] .toolbar,
+.page[data-page="tabbar-labels"] .toolbar,
+.page[data-page="messages"] .toolbar {
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+    -webkit-transition: 0ms;
+    -o-transition: 0ms;
+    transition: 0ms;
+}
+.page[data-page="tabbar"] .page-content {
+    padding-bottom: 44px;
+}
+.page[data-page="tabbar-labels"] .page-content {
+    padding-bottom: 50px;
+}
+@media all and (min-width: 768px) {
+    .page[data-page="tabbar-labels"] .page-content {
+        padding-bottom: 56px;
+    }
+}
+
+.browse-slider {
+    width: 100%;
+}
+.browse-slider .swiper-slide {
+    font-weight: 300;
+    font-size: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    background: #fff;
+}

@@ -2109,10 +2109,10 @@ html:not(.watch-active-state) .layout-white label.label-radio:active,
   background-color: #ddd;
 }
 .layout-white .searchbar {
-  background: #c9c9ce;
+  background: #ff3b30;
 }
 .layout-white .searchbar:after {
-  background-color: #b4b4b4;
+  background-color: #ff3b30;
 }
 .layout-white .list-block input[type="text"],
 .list-block.layout-white input[type="text"],
