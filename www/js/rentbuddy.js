@@ -11,3 +11,15 @@ var mainView = myApp.addView('.view-main', {
     // Enable Dynamic Navbar for this view
     dynamicNavbar: true,
 });
+
+myApp.onPageInit('create-item', function (page) {
+    var pickerCategory = myApp.picker({
+        input: '#picker-category',
+        cols: [
+            {
+                textAlign: 'center',
+                values: ['Costumes', 'Electronics', 'Photography', 'Sports', 'Others']
+            }
+        ]
+    });
+});

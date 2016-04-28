@@ -1,3 +1,42 @@
+a {
+    color: #F44336;
+}
+
+.button {
+    border: 1px solid #F44336;
+    color: #F44336;
+}
+
+.toolbar-inner{
+    padding-top: 4px;
+}
+
+
+.navbar,
+.toolbar,
+.subnavbar {
+    background: #ff3b30;
+    color: #fff;
+}
+
+.navbar a.link, 
+.toolbar a.link, 
+.subnavbar a.link {
+/*    color: #fff;*/
+}
+
+.searchbar {
+    background: #ff3b30;
+}
+
+.tabbar a {
+    color: #fff;
+}
+
+.tabbar a.active {
+    color: #fff;
+}
+
 .page[data-page="tabbar"] .tabbar,
 .page[data-page="tabbar-labels"] .tabbar,
 .page[data-page="messages"] .tabbar,
@@ -45,3 +84,4 @@
     align-items: center;
     background: #fff;
 }
+
