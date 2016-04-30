@@ -22,7 +22,8 @@ a {
 .navbar a.link, 
 .toolbar a.link, 
 .subnavbar a.link {
-/*    color: #fff;*/
+    /*    color: #fff;*/
+    /*if put this white will affect the default keyboard color too*/
 }
 
 .searchbar {
@@ -64,10 +65,12 @@ a {
     }
 }
 
-.browse-slider {
+.ks-demo-slider {
     width: 100%;
+    height: 100%;
 }
-.browse-slider .swiper-slide {
+
+.ks-demo-slider .swiper-slide{
     font-weight: 300;
     font-size: 25px;
     display: -webkit-box;
@@ -83,5 +86,17 @@ a {
     -webkit-align-items: center;
     align-items: center;
     background: #fff;
+}
+
+.ks-fade-slider {
+    background-size: cover;
+    background-position: center;
+}
+
+.signup-page-footer{
+    position: absolute; 
+    text-align: center; 
+    left: 0; 
+    width: 100%;
 }
 
