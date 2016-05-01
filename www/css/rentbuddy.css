@@ -41,4 +41,31 @@ a {
     text-align: center; 
     left: 0; 
     width: 100%;
+    z-index: 10;
+}
+
+.signup-page-footer-fb{
+    bottom: 55px; 
+    background: #3b5998; 
+    border: none;
+    color: #fff;
+    width: 85%;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.signup-page-footer-email{
+    bottom: 5px;
+    background: #fff;
+    border: none; 
+    color: #757575;
+    width: 85%;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
 }
