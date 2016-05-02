@@ -1,15 +1,15 @@
 // Init App
 var myApp = new Framework7({
-    modalTitle: 'RentBuddy'
+    modalTitle: 'RentBuddy',
+    cache:false,
+    pushState: true,
+    //iOS Specific
+    animateNavBackIcon: true
 });
 
-// Expose Internal DOM library
 var $$ = Dom7;
 
-// Add main view
 var mainView = myApp.addView('.view-main', {
-    // Enable Dynamic Navbar for this view
-    dynamicNavbar: true,
 });
 
 myApp.onPageInit('create-item', function (page) {
@@ -23,3 +23,13 @@ myApp.onPageInit('create-item', function (page) {
         ]
     });
 });
+
+myApp.onPageInit('index', function (page) {
+    console.log("onPageInit index");
+    var authtoken = localStorage.getItem("authtoken");
+//     if (authtoken != null) { todo
+    mainView.router.load({url: 'home.html', force: true, reload: true, animatePages: false});
+//     } else {
+//    mainView.router.load({url: 'signup-splash.html', reload: true, animatePages: true});//back to previous page     
+//     }
+}).trigger();

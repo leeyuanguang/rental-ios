@@ -1,0 +1,101 @@
+<div class="pages">
+    <div data-page="home" class="page"> 
+        <div class="navbar">
+            <div class="navbar-inner row">
+                <div class="left col-5"><i class="mdi mdi-account-multiple-outline"></i></div>
+                <div class="center col-80" style="margin-top: 15px;">
+                    <form data-search-list=".search-here" data-search-in=".item-title" class="searchbar searchbar-init">
+                        <div class="searchbar-input">
+                            <input type="search" placeholder="Search RentBuddy"/><a href="#" class="searchbar-clear"></a>
+                        </div><a href="#" class="searchbar-cancel color-white">Cancel</a>
+                    </form>
+                </div>
+                <div class="right col-10"><i class="mdi mdi-inbox"></i></div>
+            </div>
+        </div>   
+        <div class="page-content">
+            <div class="tabs">
+                <div id="tab-1" class="tab active">
+                    <div data-pagination=".swiper-pagination" class="swiper-container swiper-init browse-slider">
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="img/index-slider/slider1.jpg" alt="" style="width: 100%;"/></div>
+                            <div class="swiper-slide"><img src="img/index-slider/slider2.jpg" alt="" style="width: 100%;"/></div>
+                            <div class="swiper-slide"><img src="img/index-slider/slider3.jpg" alt="" style="width: 100%;"/></div>
+                        </div>
+                    </div>
+                    <div class="" style="margin-top: 8px; margin-left:4px; margin-right:4px;">
+                        <div class="row">
+                            <div class="col-50 index-category"><img src="img/category/costume.jpg" alt="" style="width: 100%;"/></div>
+                            <div class="col-50 index-category"><img src="img/category/costume.jpg" alt="" style="width: 100%;"/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-50 index-category"><img src="img/category/costume.jpg" alt="" style="width: 100%;"/></div>
+                            <div class="col-50 index-category"><img src="img/category/costume.jpg" alt="" style="width: 100%;"/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-50 index-category"><img src="img/category/costume.jpg" alt="" style="width: 100%;"/></div>
+                            <div class="col-50 index-category"><img src="img/category/costume.jpg" alt="" style="width: 100%;"/></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-2" class="tab">
+                    <div class="content-block">
+                        <p>This is tab 2 content</p>
+                        <p>Temporary links:</p>
+                        <a href="signup-splash.html" class="button button-raised">signup splash</a>
+                        <br>
+                        <a href="create-item.html" class="button button-raised">create item screen link</a>
+                        <a href="update-item.html" class="button button-raised">update item screen link</a>
+                        <br>
+                        <br>
+                        <button class="button button-raised" onclick="takePic();">TEST CAMERA</button>
+                        <img id="imageFile"/>
+                        <br><br>
+                        <p>References:</p>
+                        <a href="about.html" data-context-name="context">test context</a><br>
+                        <a href="languages.html" class="item-link" data-context-name="languages">
+                            <div class="item-inner">
+                                <div class="item-title">Language Test</div>
+                            </div>
+                        </a><br>
+
+                        <a href="kitchen-sink-ios/index.html" class="external link button button-raised button-fill">Kitchen Sink</a><br>
+                        <a href="css/MaterialDesignFonts/preview.html" class="external link button button-raised button-fill">Material Design Icons</a><br>
+                    </div>
+                </div>
+                <div id="tab-3" class="tab"> 
+                    <div class="content-block">
+                        <p>This is tab 3 content</p>
+                    </div>
+                </div>
+                <div id="tab-4" class="tab"> 
+                    <div class="content-block">
+                        <p>This is tab 4 content</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="toolbar tabbar tabbar-labels">
+            <div class="toolbar-inner">
+                <a href="#tab-1" class="tab-link active">
+                    <i class="mdi mdi-magnify"></i>
+                    <span class="tabbar-label">Browse</span>
+                </a>
+                <a href="#tab-2" class="tab-link">
+                    <i class="mdi mdi-camera"></i>
+                    <span class="tabbar-label">Rent</span>
+                </a>
+                <a href="#tab-3" class="tab-link">
+                    <i class="mdi mdi-apps"></i>
+                    <span class="tabbar-label">Notification</span>
+                </a>
+                <a href="#tab-4" class="tab-link">
+                    <i class="mdi mdi-account-circle"></i>
+                    <span class="tabbar-label">Me</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
