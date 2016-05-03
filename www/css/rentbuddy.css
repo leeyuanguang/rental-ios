@@ -2,11 +2,6 @@ a {
     color: #F44336;
 }
 
-.button {
-    border: 1px solid #F44336;
-    color: #F44336;
-}
-
 .toolbar-inner{
     padding-top: 4px;
 }
@@ -16,13 +11,6 @@ a {
 .subnavbar {
     background: #ff3b30;
     color: #fff;
-}
-
-.navbar a.link, 
-.toolbar a.link, 
-.subnavbar a.link {
-    /*    color: #fff;*/
-    /*if put this white will affect the default keyboard color too*/
 }
 
 .searchbar {
@@ -45,8 +33,8 @@ a {
 
 .signup-splash-footer-fb{
     bottom: 55px; 
-    background: #3b5998; 
     border: none;
+    background: #3b5998 !important;
     color: #fff;
     width: 85%;
     position: absolute;
@@ -57,7 +45,7 @@ a {
 
 .signup-splash-footer-email{
     bottom: 5px;
-    background: #fff;
+    background: #fff !important;
     border: none; 
     color: #757575;
     width: 85%;
@@ -65,14 +53,4 @@ a {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
-}
-
-.swiper-pagination-bullet{
-    background: #fff;
-    opacity: 0.4;
-}
-
-.swiper-pagination-bullet-active{
-    background: #fff;
-    opacity: 1;
 }
