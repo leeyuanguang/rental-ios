@@ -3,7 +3,7 @@ a {
 }
 
 .toolbar-inner{
-    padding-top: 4px;
+    padding-top: 2px;
 }
 
 .navbar,
@@ -53,4 +53,10 @@ a {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
+}
+
+.row .index-category {
+    width: 50%;
+    width: -webkit-calc((100% - 6px*1) / 2);
+    width: calc((100% - 6px*1) / 2);
 }
