@@ -1,4 +1,4 @@
-<div class="page" data-page="home">
+<div class="page" data-page="me">
     <div class="navbar">
         <div class="navbar-inner row">
             <div class="left col-10"><i class="mdi mdi-account-multiple-outline"></i></div>
@@ -13,31 +13,43 @@
             </div>
             <div class="right col-10"><i class="mdi mdi-inbox"></i></div>
         </div>
-    </div>   
+    </div>
+
     <div class="page-content">
-        <div data-pagination=".swiper-pagination" class="swiper-container swiper-init browse-slider">
-            <div class="swiper-pagination color-red"></div>
-            <div class="swiper-wrapper" style="height: min-content;">
-                <div class="swiper-slide"><img src="img/index-slider/slider1.jpg" alt="" style="width: 100%;"/></div>
-                <div class="swiper-slide"><img src="img/index-slider/slider2.jpg" alt="" style="width: 100%;"/></div>
-                <div class="swiper-slide"><img src="img/index-slider/slider3.jpg" alt="" style="width: 100%;"/></div>
-            </div>
-        </div>
-        <div class="" style="margin: 8px 4px 0 4px;">
-            <div class="row">
-                <div class="col-50 index-category"><img src="img/category/costume.jpg" alt="" style="width: 100%;"/></div>
-                <div class="col-50 index-category"><img src="img/category/costume.jpg" alt="" style="width: 100%;"/></div>
-            </div>
-            <div class="row">
-                <div class="col-50 index-category"><img src="img/category/costume.jpg" alt="" style="width: 100%;"/></div>
-                <div class="col-50 index-category"><img src="img/category/costume.jpg" alt="" style="width: 100%;"/></div>
-            </div>
-            <div class="row">
-                <div class="col-50 index-category"><img src="img/category/costume.jpg" alt="" style="width: 100%;"/></div>
-                <div class="col-50 index-category"><img src="img/category/costume.jpg" alt="" style="width: 100%;"/></div>
-            </div>
+        <div class="content-block">
+            <p>This is tab 2 content</p>
+            <p>Temporary links:</p>
+            <a href="signup-splash.html" class="button button-raised">signup splash</a>
+
+            <br>
+
+            <a href="create-item.html" class="button button-raised">create item screen link</a>
+            <a href="update-item.html" class="button button-raised">update item screen link</a>
+
+            <br>
+            <br>
+
+            <button class="button button-raised" onclick="takePic();">TEST CAMERA</button>
+            <img id="imageFile"/>
+
+            <br>
+            <br>
+
+            <p>References:</p>
+            <a href="about.html" data-context-name="context">test context</a><br>
+            <a href="languages.html" class="item-link" data-context-name="languages">
+                <div class="item-inner">
+                    <div class="item-title">Language Test</div>
+                </div>
+            </a>
+
+            <br>
+
+            <a href="kitchen-sink-ios/index.html" class="external link button button-raised button-fill">Kitchen Sink</a><br>
+            <a href="css/MaterialDesignFonts/preview.html" class="external link button button-raised button-fill">Material Design Icons</a><br>
         </div>
     </div>
+
     <div class="toolbar tabbar tabbar-labels">
         <div class="toolbar-inner">
             <a href="home.html" class="link" data-reload="true" data-ignore-cache="true">
