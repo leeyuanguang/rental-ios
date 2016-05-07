@@ -4,7 +4,13 @@ var myApp = new Framework7({
     cache: false,
     pushState: true,
     //iOS Specific
-    animateNavBackIcon: true
+    animateNavBackIcon: true,
+    template7Pages: true,
+    template7Data: {
+        'settings': {
+            version: '1.0.0'
+        }
+    }
 });
 
 var $$ = Dom7;
@@ -37,5 +43,14 @@ myApp.onPageInit('index', function (page) {
 function navigateToSearch() {
     console.log("navigateToSearch");
     var value = document.getElementById("search").value;
+
+    var myApp = new Framework7({
+        template7Data: {
+            'search': {
+                result: value
+            }
+        }
+    });
+
     mainView.router.load({url: 'search.html', force: false, reload: false, animatePages: true});
 }
