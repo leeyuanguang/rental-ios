@@ -14,7 +14,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transform: translate(0, 0);
-    font-size: 24px;
 }
 
 .mdi-access-point:before {

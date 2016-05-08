@@ -79,3 +79,20 @@ a {
     padding-bottom: 100%;;
     transition-duration: 400ms;
 }
+
+.grid div[class*="col-"] {
+    background: #EFEFF4;
+    text-align: center;
+    color: #6d6d72;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.me-content {
+    margin: 5px 0 5px 0;
+}
+
+.image-content{
+    margin-bottom: 5px;
+}
