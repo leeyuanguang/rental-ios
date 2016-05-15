@@ -1,3 +1,4 @@
+/*overriding framework7 ios css*/
 a {
     color: #F44336;
 }
@@ -25,9 +26,11 @@ a {
 .page {
     background: #fff;
 }
+/*end overriding framework7 ios css*/
 
 /*shared android ios css*/
 
+/*sign up splash screen*/
 .signup-splash-footer{
     position: absolute; 
     text-align: center; 
@@ -60,13 +63,9 @@ a {
     margin-right: -50%;
     transform: translate(-50%, -50%)
 }
+/*end sign up splash screen*/
 
-.row .index-category {
-    width: 50%;
-    width: -webkit-calc((100% - 6px*1) / 2);
-    width: calc((100% - 6px*1) / 2);
-}
-
+/*me screen*/
 .profile-avatar {
     width: max-content;
     border-radius: 100%;
@@ -96,13 +95,23 @@ a {
     margin: 5px 0 5px 0;
 }
 
-.image-content{
-    margin-bottom: 5px;
-}
-
 .title-horizontal-line {
     width: 100%;
     height: 10px; 
     border-bottom: 1px solid #BABABA;
     text-align: center
 }
+/*end me screen*/
+
+
+/*image layout*/
+.image-content{
+    margin-bottom: 5px;
+}
+
+.row .index-category {
+    width: 50%;
+    width: -webkit-calc((100% - 6px*1) / 2);
+    width: calc((100% - 6px*1) / 2);
+}
+/*end image layout*/
