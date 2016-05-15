@@ -28,7 +28,19 @@ a {
 }
 /*end overriding framework7 ios css*/
 
-/*shared android ios css*/
+/*-shared android ios css-*/
+
+/*image layout*/
+.image-content{
+    margin-bottom: 5px;
+}
+
+.row .index-category {
+    width: 50%;
+    width: -webkit-calc((100% - 6px*1) / 2);
+    width: calc((100% - 6px*1) / 2);
+}
+/*end image layout*/
 
 /*sign up splash screen*/
 .signup-splash-footer{
@@ -102,16 +114,3 @@ a {
     text-align: center
 }
 /*end me screen*/
-
-
-/*image layout*/
-.image-content{
-    margin-bottom: 5px;
-}
-
-.row .index-category {
-    width: 50%;
-    width: -webkit-calc((100% - 6px*1) / 2);
-    width: calc((100% - 6px*1) / 2);
-}
-/*end image layout*/
