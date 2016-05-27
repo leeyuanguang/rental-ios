@@ -9,7 +9,7 @@ var USER_ROLE = {RENTEE: {val: 0, name: 'Rentee'},
 };
 var role = 0;
 var rentId = 'userRenter';
-var rent_item = {name: "Samsung Galaxy S6", price: 10, deposit: 80, location: "Serangoon", condition: 8, pic: "img/phone.png"};
+var rent_item = {name: "Samsung Galaxy S6", price: 10, deposit: 80, location: "Serangoon", condition: 8, pic: "img/phone.jpg"};
 var latestOffer;
 
 var fw7 = new Framework7();

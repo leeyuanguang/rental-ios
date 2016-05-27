@@ -1,4 +1,52 @@
 <div class="page no-swipeback" data-page="message-view">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font: 10px Helvetica, Arial; }
+        /*      	form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+                form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+                form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }*/
+        #left_btn {margin-right: 0px;}
+        .cropCircle { background: #eee no-repeat center; background-size: cover; border-radius: 50%;}
+        #user_icon { background-image: url(assets/profile.png); margin: 0; height: 40px; width: 40px;}
+        #user_name { colour: #8e8e93; width: inherit; text-align: center; font-size: 10px; margin-top: 22px; }
+        #item_icon { background-image: url(assets/item.png); margin: 0px 5px 0px 0px; height: 35px; width: 35px;}
+        #item_div {justify-content: flex-start;}
+        /*#item_content { height: 20%; overflow-y:scroll	;}*/
+        #item_info {min-height: 50px;}
+        #item_list { margin: 45px 0px 0px 0px; }
+        #item_img { content:url(assets/noimage.png); max-width:100%; height:auto; width:auto ;}
+        #item_left_div {float: left; min-height:110px; width: 30%; margin-right: 5px;}
+        #item_right_div {}
+        #item-description tr {vertical-align: top;}
+        #item-description td {padding: 2px;}
+        .page-content { height:80%; }  
+        .message { margin-top: 5px !important;}
+        .message-received.message-with-avatar .message-name {margin-left: 10px !important;}
+        .message-received.message-with-avatar .message-text {margin-left: 0px !important;}
+        .message-text {font-size:14px !important; min-height:30px !important;} 
+        .message-label {margin-top: 0px !important; font-size: 10px !important;}
+        .message-received.message-with-avatar .message-text {text-align: center;} 
+        .offer { text-align: center;}
+        #msgArea { bottom: 0px; border-color: #66afe9; }
+        .buttons-row { margin-top: 0px; margin-bottom: 0px;}
+        #accept_text { margin-top: 5px; text-align: center; }
+
+        /*style for Offer Popover*/
+        .modal { z-index: 5041; left: 50%; top: 60%; font-size: 14px;}	
+        .modal-overlay { z-index: 5040 !important;}
+        .picker-calendar { z-index: 14000 !important; height:260px !important; }
+        .content-block-title { font-size: 12px !important; margin-top: 15px !important;}
+        .item-input-text  { font-size:14px !important;}
+        .popover { z-index: 5042 ;}
+        #popup_content { margin-top: 10px; margin-bottom: 10px; }
+        #popup_title { text-align: center; font-size:16px; color:black; }
+        #item_price_input {width: 100%;}
+        #price_symbol { float:left; margin-top:10px;}
+        #price_value { margin-left: 25px;}
+        #price_text { color:#6d6d72;}
+        #date_value { float:left; width:90%;}
+        #date_symbol { margin-top:10px; cursor: pointer;}
+    </style>
     <div class="navbar">
         <div class="navbar-inner">
             <div class="left"><a href="#" class="back link icon-only color-white"><i class="mdi mdi-keyboard-backspace"></i></a></div>
