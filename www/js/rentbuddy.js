@@ -80,3 +80,8 @@ function navigateToSearch() {
 
     mainView.router.load({url: 'search.html', force: false, reload: false, animatePages: true});
 }
+
+
+myApp.onPageBeforeAnimation('message-view', function (page) {
+setupPage();
+});

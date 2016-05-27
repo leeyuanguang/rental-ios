@@ -1,0 +1,131 @@
+<div class="page no-swipeback" data-page="message-view">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left"><a href="#" class="back link icon-only color-white"><i class="mdi mdi-keyboard-backspace"></i></a></div>
+            <div class="center" id="nav-title">Rentezvous</div>
+            <div class="right"><i class="mdi mdi-account"></i></div>
+        </div>
+    </div>
+    <div id="item_list" class="list-block accordion-list">
+        <ul>
+            <li class="accordion-item">
+                <a id="item_info" class="item-content item-link">
+                    <div id="item_div" class="item-inner">
+                        <!-- <div id="item_icon" class="cropCircle hidden"></div> -->
+                        <div id="item_name" class="item-title">Item Name</div>
+                    </div>
+                </a>
+                <div class="accordion-item-content">
+                    <div class="content-block" id="item_content">
+                        <div id="item_left_div">
+                            <img id="item_img" />
+                        </div>
+                        <div id="item_right_div">
+                            <table id="item-description">
+                                <tr>
+                                    <td><span class="glyphicon glyphicon-tag"></span></td>
+                                    <td id="item_price">$ /Day, $ Deposit </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="glyphicon glyphicon-map-marker"></span> </td>
+                                    <td id="item_location"> </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="glyphicon glyphicon-heart"></span> </td>
+                                    <td id="item_condition">Conditions: /10</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="btndiv"></div>
+    <div id="accept_text"></div> 
+
+    <!-- Message Area -->
+    <div class="page-content messages-content">
+        <div class="messages" id="msg">
+            <!-- Date stamp -->
+            <div id="msg-date" class="messages-date">Sunday, Feb 9 <span>12:58</span></div>
+        </div>
+        <div id="pageEnd"></div>
+    </div>
+    <!-- End Message Area-->
+    <!-- Message Bar-->
+    <div class="toolbar messagebar">
+        <div class="toolbar-inner" style="">
+            <textarea elastic autofocus placeholder="Message" id="msgArea" onkeyup="handleMsgAreaResize(event, this)" onkeydown="handleTextSubmit(event, this)"></textarea>
+            <a id="submit" class="link color-white">Send</a>
+        </div>
+    </div>
+    <!-- End Message Bar-->
+
+    <!-- Make Offer Popover -->
+    <div class="popover popover-about" id="popupOver">
+        <div class="popover-angle"></div>
+        <div class="popover-inner">
+            <div class="content-block" id="popup_content">
+                <div id="popup_title"><span>Make Offer</span></div>
+                <!-- Date chooser item -->
+                <div class="content-block-title" id="popup_date_title">Dates to Rent</div>
+                <div class="list-block" id="block_date">
+                    <ul>
+                        <li>
+                            <div class="item-content" id="popup_date_content">
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <div id="date_value">
+                                            <input type="text" class="item-input-text" placeholder="Select Date Range" readonly id="calendar-range" onchange="checkDates(event)">
+                                        </div>
+                                        <div id="date_symbol" class="hidden" onclick="clearDates(event)">
+                                            <span class="glyphicon glyphicon-remove-sign"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Price Input item -->
+                <div class="content-block-title" id="popup_price_title">Proposed Price</div>
+                <div class="list-block" id="block_price">
+                    <ul>
+                        <li>
+                            <div class="item-content" id="popup_price_content">
+                                <div class="item-inner">
+                                    <div class="item-input" id="item_price_input">
+                                        <div id="price_symbol">$</div>
+                                        <div id="price_value">
+                                            <input type="text" class="item-input-text" id="price_text" placeholder="Input Offer" onchange="updatePrice(event)" data-toggle="tooltip_error">
+                                        </div>
+                                        <div id="tooltip_price_error" class="tooltip right" role="tooltip_error">
+                                            <div class="tooltip-arrow"></div>
+                                            <div class="tooltip-inner">
+                                                Some tooltip text!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div style="margin-top:15px;">
+                    <label id="total_text">Total Price*: </label>
+                    <p id="deposit_price" style="font-size:10px;">*Price excludes the $ deposit required by renter.</p>
+                </div>
+                <div class="row">
+                    <div class="col-50">
+                        <a href="" class="button button-small close-popover">Cancel</a>
+                    </div>
+                    <div class="col-50">
+                        <a href="" class="button button-small disabled close-popover" id="offer_submit" onclick="makeOffer(event)">Submit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Make Offer Popover -->
+</div>
