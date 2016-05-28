@@ -48,6 +48,6 @@ function navigateToSearch() {
 
 
 myApp.onPageBeforeAnimation('message-view', function (page) {
-   setupPage();
+   //setupPage();
 });
 
