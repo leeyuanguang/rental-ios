@@ -266,7 +266,7 @@ function loadItemInfo() {
 }
 
 function setupPage() {
-       console.log('setup page');
+    console.log('setup page');
 //    initSocket();
     loadItemInfo();
     setupItemAccordion();
@@ -281,12 +281,12 @@ function setupPage() {
 }
 
 function setupItemAccordion() {
-     
+
     fw7.accordionOpen($$('.accordion-item'));
     $$('.accordion-item').on('opened', function () {
         content_height = 50;
         adjustContentHeight(content_height);
-        scrollToEnd(); 
+        scrollToEnd();
     });
 
     $$('.accordion-item').on('closed', function (e) {
@@ -322,7 +322,6 @@ function setupCalenderPicker() {
     });
 }
 
-$(document).ready(function () {
-    
-    setupPage();
-});
+//$(document).ready(function () {
+//    setupPage();
+//});
