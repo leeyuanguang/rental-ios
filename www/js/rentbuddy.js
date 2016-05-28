@@ -48,6 +48,9 @@ function navigateToSearch() {
 
 
 myApp.onPageBeforeAnimation('message-view', function (page) {
-   //setupPage();
+    //setupPage();
+    console.log("onPageBeforeAnimation1");
+
+    console.log("onPageBeforeAnimation2");
 });
 
