@@ -43,6 +43,16 @@ a {
 /*end image layout*/
 
 /*sign up splash screen*/
+.signup-splash-slider {
+    width: 100%;
+    height: 100%;
+}
+
+.signup-splash-fade-slider .swiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+
 .signup-splash-footer{
     position: absolute; 
     text-align: center; 

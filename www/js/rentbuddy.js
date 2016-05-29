@@ -15,7 +15,8 @@ var myApp = new Framework7({
 
 var $$ = Dom7;
 
-var mainView = myApp.addView('.view-main', {})
+var mainView = myApp.addView('.view-main', {
+});
 
 myApp.onPageInit('create-item', function (page) {
     var pickerCategory = myApp.picker({
@@ -49,4 +50,3 @@ function navigateToSearch() {
 
 myApp.onPageBeforeAnimation('message-view', function (page) {
 });
-
