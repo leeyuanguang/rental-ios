@@ -1,10 +1,51 @@
-<div class="page no-swipeback" data-page="inbox">
+<div class="page" data-page="inbox">
+    <style>
+        .button.active{
+            background: #fff;
+            color: #FF3B30;
+        }
+        .button {
+            border: 1px solid #fff;
+            color: #fff;
+        }
+    </style>
+
     <div class="navbar">
         <div class="navbar-inner">
             <div class="left"><a href="#" class="back link color-white">Close</a></div>
             <div class="center" id="nav-title">Inbox</div>
-            <div class="right">test</div>
+        </div>
+    </div>
+    <div class="subnavbar sliding">
+        <div class="buttons-row">
+            <a href="#" class="button active">All</a>
+            <a href="#" class="button">Buying</a>
+            <a href="#" class="button">Selling</a>
         </div>
     </div>
 
+    <div class="page-content">
+        <div class="list-block media-list">
+            <ul>
+                <li class="swipeout">
+                    <div class="item-content swipeout-content">
+                        <a href="#" class="item-link item-content">
+                            <div class="item-media"><img src="http://lorempixel.com/160/160/people/1" width="80"/></div>
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">JBL Pluse 2</div>
+                                    <div class="item-after">$15</div>
+                                </div>
+                                <div class="item-subtitle">@verylunatic</div>
+                                <div class="item-text">Good condition. just bought last year at a flee market. Feeling huat to sell this at a cheaper price.</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swipeout-actions-right">
+                        <a href="#" data-confirm="Are you sure you want to delete this item?" class="swipeout-delete">Delete</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>     
 </div>

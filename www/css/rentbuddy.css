@@ -3,6 +3,21 @@ a {
     color: #F44336;
 }
 
+/*.button.active{
+    background: #fff;
+    color: #FF3B30;
+}
+*/
+
+.button {
+    border: 1px solid #FF3B30;
+    color: #FF3B30;
+}
+
+.button.button-fill{
+    background: #FF3B30;
+}
+
 .toolbar-inner{
     padding-top: 2px;
 }
