@@ -1,4 +1,5 @@
 <div class="page" data-page="chatroom">
+  
     <div class="navbar">
         <div class="navbar-inner">
             <div class="left"><a href="index.html" class="back link color-white"><i class="mdi mdi-chevron-left"></i></a></div>
@@ -12,7 +13,7 @@
 
     <!-- Content Area -->  
     <div class="page-content">
-            <div class="list-block accordion-list">
+        <div class="list-block accordion-list">
             <ul>
                 <li class="accordion-item">
                     <a href="#" class="item-link item-content">
@@ -35,138 +36,138 @@
                     </div>
                 </li>
             </ul>
-            </div>
+        </div>
 
-            <!-- Button / Banner Area -->            
-            <div id="btndiv"></div>
-            <div id="accept_text"></div> 
-            <!-- End Button / Banner Area Area -->
+        <!-- Button / Banner Area -->            
+        <div id="btndiv"></div>
+        <div id="accept_text"></div> 
+        <!-- End Button / Banner Area Area -->
 
-            <!-- Message Area -->
-            <div class="page-content messages-content">
-                <div class="messages" id="msg">
-                    <!-- Date stamp -->
-                    <div id="msg-date" class="messages-date">Sunday, Feb 29 <span>12:58</span></div>
-                </div>
-                <div id="pageEnd"></div>
+        <!-- Message Area -->
+        <div class="page-content messages-content">
+            <div class="messages" id="msg">
+                <!-- Date stamp -->
+                <div id="msg-date" class="messages-date">Sunday, Feb 29 <span>12:58</span></div>
             </div>
-            <!-- End Message Area-->
+            <div id="pageEnd"></div>
+        </div>
+        <!-- End Message Area-->
 
-            <!-- Message Bar-->
-            <div class="toolbar messagebar">
-                <div class="toolbar-inner" style="">
-                    <textarea elastic autofocus placeholder="Message" id="msgArea" onkeyup="handleMsgAreaResize(event,this)" onkeydown="handleTextSubmit(event,this)"></textarea>
-                    <a id="submit" class="link">Send</a>
-                </div>
+        <!-- Message Bar-->
+        <div class="toolbar messagebar">
+            <div class="toolbar-inner" style="">
+                <textarea elastic autofocus placeholder="Message" id="msgArea" onkeyup="handleMsgAreaResize(event, this)" onkeydown="handleTextSubmit(event, this)"></textarea>
+                <a id="submit" class="link">Send</a>
             </div>
-            <!-- End Message Bar--> 
+        </div>
+        <!-- End Message Bar--> 
     </div>
     <!-- End Content Area-->
 
     <!-- Message + Offer Script -->
     <script>
-    $('#submit').click(function() {
-        if ($('#msgArea').val().trim() !== "") {
-            sendMessage();
-        }
-    });
-
-    function sendMessage() {
-        console.log('client sending - ' + $('#msgArea').val().trim());
-        socket.emit('message', {
-            msg: $('#msgArea').val().trim(),
-            user: rentId + role
-        });
-        $('#msgArea').val(''); 
-        resetMsgHeight();
-        event.preventDefault();
-        return false;
-    }
-
-    socket.on('broadcast', function(obj) {
-        console.log('received ' + obj.msg);
-        receiveMessage(obj.msg, obj.user);
-        scrollToEnd();
-    });
-
-    socket.on('offerAck', function(obj) {
-        var dates;
-        var dayCount;
-        if (obj.dates.length > 1) {
-            dayCount = checkDatesCount(obj.dates);
-            dates = getSimpleDate(obj.dates[0]) + " to " + getSimpleDate(obj.dates[1]) + ' (' + dayCount + 'day)';
-        } else {
-            dates = "For " + getSimpleDate(obj.dates);
-            dayCount = 1;
-        }
-
-        latestOffer = {
-            rentee: obj.rentee,
-            renter: rentId + role,
-            dates: obj.dates,
-            price: obj.price,
-            status: ''
-        };
-        console.log("offerAck: " + obj.rentee + ", " + obj.price + " , " + obj.dates);
-        receiveOffer(obj.rentee, obj.price + "/day", dates, dayCount * obj.price);
-        scrollToEnd();
-    });
-
-    socket.on('offerResponseAck', function(obj) { 
-        console.log("offerResponseAck: " + obj.rentee + ", " + obj.price + " , " + obj.dates + " , " + obj.status);
-        var dates;
-        var dayCount;
-        if (obj.dates.length > 1) {
-            dayCount = checkDatesCount(obj.dates);
-            dates = getSimpleDate(obj.dates[0]) + " to " + (obj.dates[1]) + ' (' + dayCount + 'day)';
-        } else {
-            dates = "For " + getSimpleDate(obj.dates);
-            dayCount = 1;
-        }
-
-        latestOffer = { rentee: obj.rentee, renter: rentId + role, dates: obj.dates,
-            price: obj.price, status: '' };
-        receiveOfferResp(obj.renter, obj.price + "/day", dates, dayCount * obj.price, obj.status);
-        scrollToEnd();
-    });
-
-    function receiveMessage(msg, sentUser) { 
-        var time = new Date().getFormatedTime();
-        if (sentUser === rentId + role) {
-            $('#msg').append('<div class="message message-sent "><div class="message-text">' + msg + '</div><div class="message-label">' + time + '</div></div>');
-        } else {
-            $('#msg').append('<div class="message message-with-avatar message-received"><div class="message-text">' + msg + '</div><div class="message-label">' + time + '</div></div>');
-        }
-    }
-
-    function receiveOffer(sentUser, price, days, total) {
-        //TODO: check renter & rentee id to confirm display 
-        var time = new Date().getFormatedTime();
- 
-        if (sentUser === rentId + role) {
-            console.log("sent offer");
-            $('#msg').append('<div class="message message-sent"><div class="message-text offer"><b>Made An Offer<br/>' + days + '<br/>$' + price + '<br/>$' + total + '</b></div><div class="message-label">' + time + '</div></div>');
-        } else {
-            showOfferAckBtn(true);
-            console.log("receive offer");
-            $('#msg').append('<div class="message message-with-avatar message-received offer"><div class="message-text"><b>Made An Offer<br/>' + days + '<br/>$' + price + '<br/>$' + total + '</b></div><div class="message-label">' + time + '</div></div>');
-        }
-    }
-
-    function receiveOfferResp(sentUser, price, days, total, status) { 
-        var time = new Date().getFormatedTime();
-
-        if (sentUser === rentId + role) {
-            console.log("sent offer");
-            $('#msg').append('<div class="message message-sent"><div class="message-text offer"><b>' + status + ' Offer<br/>' + days + '<br/>$' + price + '<br/>$' + total + '</b></div><div class="message-label">' + time + '</div></div>');
-        } else {
-            if (status === 'Accepted') {
-                showFeedbackBtn();
+        $('#submit').click(function () {
+            if ($('#msgArea').val().trim() !== "") {
+                sendMessage();
             }
-            console.log("receive offer");
-            $('#msg').append('<div class="message message-with-avatar message-received offer"><div class="message-text"><b>Offer ' + status + ' <br/>' + days + '<br/>$' + price + '<br/>$' + total + '</b></div><div class="message-label">' + time + '</div></div>');
+        });
+
+        function sendMessage() {
+            console.log('client sending - ' + $('#msgArea').val().trim());
+            socket.emit('message', {
+                msg: $('#msgArea').val().trim(),
+                user: rentId + role
+            });
+            $('#msgArea').val('');
+            resetMsgHeight();
+            event.preventDefault();
+            return false;
         }
-    }
+
+        socket.on('broadcast', function (obj) {
+            console.log('received ' + obj.msg);
+            receiveMessage(obj.msg, obj.user);
+            scrollToEnd();
+        });
+
+        socket.on('offerAck', function (obj) {
+            var dates;
+            var dayCount;
+            if (obj.dates.length > 1) {
+                dayCount = checkDatesCount(obj.dates);
+                dates = getSimpleDate(obj.dates[0]) + " to " + getSimpleDate(obj.dates[1]) + ' (' + dayCount + 'day)';
+            } else {
+                dates = "For " + getSimpleDate(obj.dates);
+                dayCount = 1;
+            }
+
+            latestOffer = {
+                rentee: obj.rentee,
+                renter: rentId + role,
+                dates: obj.dates,
+                price: obj.price,
+                status: ''
+            };
+            console.log("offerAck: " + obj.rentee + ", " + obj.price + " , " + obj.dates);
+            receiveOffer(obj.rentee, obj.price + "/day", dates, dayCount * obj.price);
+            scrollToEnd();
+        });
+
+        socket.on('offerResponseAck', function (obj) {
+            console.log("offerResponseAck: " + obj.rentee + ", " + obj.price + " , " + obj.dates + " , " + obj.status);
+            var dates;
+            var dayCount;
+            if (obj.dates.length > 1) {
+                dayCount = checkDatesCount(obj.dates);
+                dates = getSimpleDate(obj.dates[0]) + " to " + (obj.dates[1]) + ' (' + dayCount + 'day)';
+            } else {
+                dates = "For " + getSimpleDate(obj.dates);
+                dayCount = 1;
+            }
+
+            latestOffer = {rentee: obj.rentee, renter: rentId + role, dates: obj.dates,
+                price: obj.price, status: ''};
+            receiveOfferResp(obj.renter, obj.price + "/day", dates, dayCount * obj.price, obj.status);
+            scrollToEnd();
+        });
+
+        function receiveMessage(msg, sentUser) {
+            var time = new Date().getFormatedTime();
+            if (sentUser === rentId + role) {
+                $('#msg').append('<div class="message message-sent "><div class="message-text">' + msg + '</div><div class="message-label">' + time + '</div></div>');
+            } else {
+                $('#msg').append('<div class="message message-with-avatar message-received"><div class="message-text">' + msg + '</div><div class="message-label">' + time + '</div></div>');
+            }
+        }
+
+        function receiveOffer(sentUser, price, days, total) {
+            //TODO: check renter & rentee id to confirm display 
+            var time = new Date().getFormatedTime();
+
+            if (sentUser === rentId + role) {
+                console.log("sent offer");
+                $('#msg').append('<div class="message message-sent"><div class="message-text offer"><b>Made An Offer<br/>' + days + '<br/>$' + price + '<br/>$' + total + '</b></div><div class="message-label">' + time + '</div></div>');
+            } else {
+                showOfferAckBtn(true);
+                console.log("receive offer");
+                $('#msg').append('<div class="message message-with-avatar message-received offer"><div class="message-text"><b>Made An Offer<br/>' + days + '<br/>$' + price + '<br/>$' + total + '</b></div><div class="message-label">' + time + '</div></div>');
+            }
+        }
+
+        function receiveOfferResp(sentUser, price, days, total, status) {
+            var time = new Date().getFormatedTime();
+
+            if (sentUser === rentId + role) {
+                console.log("sent offer");
+                $('#msg').append('<div class="message message-sent"><div class="message-text offer"><b>' + status + ' Offer<br/>' + days + '<br/>$' + price + '<br/>$' + total + '</b></div><div class="message-label">' + time + '</div></div>');
+            } else {
+                if (status === 'Accepted') {
+                    showFeedbackBtn();
+                }
+                console.log("receive offer");
+                $('#msg').append('<div class="message message-with-avatar message-received offer"><div class="message-text"><b>Offer ' + status + ' <br/>' + days + '<br/>$' + price + '<br/>$' + total + '</b></div><div class="message-label">' + time + '</div></div>');
+            }
+        }
     </script>
     <!-- End Message + Offer Script -->
 

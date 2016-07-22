@@ -1,44 +1,42 @@
-<div class="pages">
-    <div data-page="search" class="page"> 
-        <div class="navbar">
-            <div class="navbar-inner row">
-                <div class="left col-10"><a href="index.html" class="back link color-white"><i class="mdi mdi-chevron-left"></i></a></div>
-                <div class="center col-80">
-                    <form data-search-list=".search-here" data-search-in=".item-title" class="searchbar searchbar-init" onsubmit="navigateToSearch();">
-                        <div class="searchbar-input">
-                            <input type="search" id="search" placeholder="Search RentBuddy"/>
-                            <a href="#" class="searchbar-clear"></a>
-                        </div>
-                        <a href="#" class="searchbar-cancel color-white">Cancel</a>
-                    </form>
-                </div>
-                <div class="right col-10"><i class="mdi mdi-inbox"></i></div>
+<div data-page="search" class="page"> 
+    <div class="navbar">
+        <div class="navbar-inner row">
+            <div class="left col-10"><a href="index.html" class="back link color-white"><i class="mdi mdi-chevron-left"></i></a></div>
+            <div class="center col-80">
+                <form data-search-list=".search-here" data-search-in=".item-title" class="searchbar searchbar-init" onsubmit="navigateToSearch();">
+                    <div class="searchbar-input">
+                        <input type="search" id="search" placeholder="Search RentBuddy"/>
+                        <a href="#" class="searchbar-clear"></a>
+                    </div>
+                    <a href="#" class="searchbar-cancel color-white">Cancel</a>
+                </form>
             </div>
-        </div> 
-        <div class="page-content">
-            <div class="content-block">
-                <p>This is search content: {{this.search}}</p>
-            </div>
+            <div class="right col-10"><i class="mdi mdi-inbox"></i></div>
         </div>
-        <div class="toolbar tabbar tabbar-labels">
-            <div class="toolbar-inner">
-                <a href="home.html" class="link" data-animate-pages="false" data-force="true" data-reload="true" data-ignore-cache="true">
-                    <i class="mdi mdi-magnify"></i>
-                    <span class="tabbar-label">Browse</span>
-                </a>
-                <a href="rent.html" class="link" data-reload="true" data-ignore-cache="true" data-animate-pages="false">
-                    <i class="mdi mdi-camera"></i>
-                    <span class="tabbar-label">Rent</span>
-                </a>
-                <a href="notification.html" class="link" data-reload="true" data-ignore-cache="true" data-animate-pages="false">
-                    <i class="mdi mdi-apps"></i>
-                    <span class="tabbar-label">Notification</span>
-                </a>
-                <a href="me.html" class="link" data-animate-pages="false" data-force="true" data-reload="true" data-ignore-cache="true">
-                    <i class="mdi mdi-account-circle"></i>
-                    <span class="tabbar-label">Me</span>
-                </a>
-            </div>
+    </div> 
+    <div class="page-content">
+        <div class="content-block">
+            <p>This is search content: {{this.search}}</p>
+        </div>
+    </div>
+    <div class="toolbar tabbar tabbar-labels">
+        <div class="toolbar-inner">
+            <a href="home.html" class="link" data-animate-pages="false" data-force="true" data-reload="true" data-ignore-cache="true">
+                <i class="mdi mdi-magnify"></i>
+                <span class="tabbar-label">Browse</span>
+            </a>
+            <a href="rent.html" class="link" data-reload="true" data-ignore-cache="true" data-animate-pages="false">
+                <i class="mdi mdi-camera"></i>
+                <span class="tabbar-label">Rent</span>
+            </a>
+            <a href="notification.html" class="link" data-reload="true" data-ignore-cache="true" data-animate-pages="false">
+                <i class="mdi mdi-apps"></i>
+                <span class="tabbar-label">Notification</span>
+            </a>
+            <a href="me.html" class="link" data-animate-pages="false" data-force="true" data-reload="true" data-ignore-cache="true">
+                <i class="mdi mdi-account-circle"></i>
+                <span class="tabbar-label">Me</span>
+            </a>
         </div>
     </div>
 </div>
